@@ -18,6 +18,7 @@
       publisher: string (required, min: 6: max: 50),
       score: number(optional),
       genre: string(required, min: 1: max: 50),
+      type: string (optional),
       tags: string(optional)
     }
     
