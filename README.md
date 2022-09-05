@@ -13,6 +13,7 @@
 ### Game:
     {
       id: number,
+      image: string (optional, path to file),
       title: string(required, min: 5: max: 100),
       description: string(required, min: 6: max: 200),
       publisher: string (required, min: 6: max: 50),
@@ -25,9 +26,11 @@
 ### Game Publisher:
     {
       id: number,
+      image: string (optional, path to file),
       name: string(required, min: 5: max: 100),
       description: string(required, min: 6: max: 200),
-      site: string(optional)
+      site: string(optional),
+      games: string (optional)
     }
     
 ### Crud Methods:
