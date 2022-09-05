@@ -43,7 +43,7 @@
 - Get all games by type
 - Get game by title
 - Get games by publisher
-- Find games by part of name. Example: If user will input Ho then endpoint will return **==Ho==low Knight**, ==**Ho==gwarts Legacy**, etc.
+- Find games by part of name. Example: If user will input Ho then endpoint will return **<mark>Ho</mark>low Knight**, **</mark>Ho</mark>gwarts Legacy**, etc.
 - Get games by score
 - Get games by tags
 - Show only specific number of games. We'll introduce how many results would be shown to us, up to ~50
