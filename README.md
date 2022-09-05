@@ -43,7 +43,7 @@
 - Get all games by type
 - Get game by title
 - Get games by publisher
-- Find games by part of name. Example: If user will input Ho then endpoint will return **<mark>Ho</mark>low Knight**, **`Ho`gwarts Legacy**, etc.
+- Find games by part of name. Example: If user will input Ho then endpoint will return **`Ho`low Knight**, **`Ho`gwarts Legacy**, etc.
 - Get games by score
 - Get games by tags
 - Show only specific number of games. We'll introduce how many results would be shown to us, up to ~50
@@ -56,3 +56,26 @@ Username + Email + Pass authentification system.
 
 ### Working with files:
 
+At least one of entities will contain 1 or more files associated to. Example: Game entity will contain game-logo, screenshots, etc.
+
+Will be implemented the following functionalities
+
+- Upload file
+- Delete file
+- Show file
+
+### Docker:
+
+The application must be encapsulated in the Docker container in order to be run on any computer or smthg close
+
+### Endpoints documentation:
+
+Postman/Swagger - will use for docs. create.
+
+### Endpoints testing coverage:
+
+All enpoints must be tested.
+
+- Create test cases
+- Testing
+- Create report about testing
