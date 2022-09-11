@@ -14,11 +14,11 @@
     {
       id: number,
       image: string (optional, path to file),
-      title: string(required, min: 5: max: 100),
+      title: string(required, min: 5: max: 50),
       description: string(required, min: 6: max: 200),
       publisher: string (required, min: 6: max: 50),
       score: number(optional),
-      genre: string(required, min: 1: max: 50),
+      genre: string(required, min: 1: max: 100),
       type: string (optional),
       tags: string(optional)
     }
