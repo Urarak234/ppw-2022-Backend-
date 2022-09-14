@@ -43,11 +43,13 @@
       
 ### Custom endpoints:
 
-- Get all games
+- Get all game titles
 - Get all games by type
-- Get game by title
-- Get games by publisher
+- Get all games of genre
+- Get game by publisher
+- Get publisher by game title
 - Find games by part of name. Example: If user will input Ho then endpoint will return **`Ho`low Knight**, **`Ho`gwarts Legacy**, etc.
+- Get publisher by name
 - Get games by score
 - Get games by tags
 - Show only specific number of games. We'll introduce how many results would be shown to us, up to ~50
