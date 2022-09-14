@@ -43,7 +43,7 @@
       
 ### Custom endpoints:
 
-- Get all game titles
+- Get game title
 - Get all games by type
 - Get all games of genre
 - Get game by publisher
