@@ -47,7 +47,7 @@
 - Get all games by type
 - Get all games of genre
 - Get games by publisher
-- Get publisher by game title
+- Get all publishers
 - Find games by part of name. Example: If user will input Ho then endpoint will return **`Ho`low Knight**, **`Ho`gwarts Legacy**, etc.
 - Get publisher by name
 - Get games by score
