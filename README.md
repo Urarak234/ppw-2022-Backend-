@@ -57,7 +57,7 @@
 
 ### User authentification:
 
-Username + Email + Pass authentification system.
+Token (User + Password) authentification system.
 
 ### Working with files:
 
