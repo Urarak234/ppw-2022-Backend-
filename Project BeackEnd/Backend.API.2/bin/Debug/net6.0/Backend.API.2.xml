@@ -1,0 +1,441 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Backend.API.2</name>
+    </assembly>
+    <members>
+        <member name="M:Backend.API._2.Controllers.EndpointsController.GetGameByTitle_Endpoint(System.String)">
+            <summary>
+            Get a game by specified title from a DataBase
+            </summary>
+            <remarks>
+            Simple request that produce some information
+            Shows a game object by specified <code>title</code> 
+            </remarks>
+            <param name="title">Introduce the <b>title</b> of a game you are looking for</param>
+            <response code = "200">Game is found!</response>
+            <response code = "404">Game is not found! Check the intorduced title!</response>
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.EndpointsController.GetAllGamesByType_Endpoint(System.String)">
+            <summary>
+            Get all games by a type from a DataBase
+            </summary>
+            <remarks>
+            Simple request that produce some information.
+            Shows all game objects in format <code>JSON</code>, by specified <b>type</b>. 
+            </remarks>
+            <response code = "200">Successfully retrieved data!</response>
+            <response code = "404">Games are not found! May be <code>DataBase is empty</code> or <code>type not exists</code>!</response>
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.EndpointsController.GetGamesByGenre(System.String)">
+            <summary>
+            Get all games by a genre from a DataBase
+            </summary>
+            <remarks>
+            Simple request that produce some information.
+            Shows all game objects in format <code>JSON</code>, by specified <b>genre</b>. 
+            </remarks>
+            <response code = "200">Successfully retrieved data!</response>
+            <response code = "404">Games are not found! May be <code>DataBase is empty</code> or <code>genre not exists</code>!</response>
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.EndpointsController.GetGamesByPublisher(System.String)">
+            <summary>
+            Get all games by publisher from a DataBase
+            </summary>
+            <remarks>
+            Simple request that produce some information.
+            Shows all game objects in format <code>JSON</code>, by specified <b>publisher</b>. 
+            </remarks>
+            <response code = "200">Successfully retrieved data!</response>
+            <response code = "404">Games are not found! May be <code>DataBase is empty</code> or <code>publisher not exists</code>!</response>
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.EndpointsController.ShowAllPublishers">
+            <summary>
+            Get all publishers from a DataBase
+            </summary>
+            <remarks>
+            Simple request that produce some information.
+            Shows all publisher objects in format <code>JSON</code> 
+            </remarks>
+            <response code = "200">Successfully retrieved data!</response>
+            <response code = "404">Publisher are not found! May be <code>DataBase is empty!</code></response>
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.EndpointsController.ShowGamesByScore(System.Double,System.Double)">
+            <summary>
+            Show all games by specific score
+            </summary>
+            <remarks>
+            Get and show games by a specific score range - from <b>minimal score</b> to <b>maximal score</b>.
+            If games info shown in the <code>JSON</code> format.
+            </remarks>
+            <param name="minScore">Introduce <b>minimal score</b></param>
+            <param name="maxScore">Introduce <b>maximal score</b></param>
+            <response code = "200">Successfully games found!</response>
+            <response code = "404">Games are not found! May be some <code>Score</code> field are not introducesed correctly or <b>no games</b> with that <b>score range</b></response>.
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.EndpointsController.ShowGamesByTags(System.String,System.String,System.String)">
+            <summary>
+            Show all games by specificated tags
+            </summary>
+            <remarks>
+            Get and show games by a specificated <b>tags</b>. 
+            If game has introduced tags - it is shown as a result. 
+            Result will be shown in <code>JSON</code> format. <br/>Maximum tag seletion - <b><c>3</c></b>
+            </remarks>
+            <param name="tag_1">Introduce <b>First Tag</b></param>
+            <param name="tag_2">Introduce <b>Second Tag</b></param>
+            <param name="tag_3">Introduce <b>Third Tag</b></param>
+            <response code = "200">Successfully games found!</response>
+            <response code = "404">Games are not found! May be some <code>Tag</code> fields are not introducesed correctly or <b>no games</b> with that <b>Tags</b></response>.
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.EndpointsController.ShowGamesUpTo(System.Int32,System.Int32)">
+            <summary>
+            Show all games up to specifc number of results
+            </summary>
+            <remarks>
+            Get and show games by a specificated <b>maximum results</b>. 
+            If game has introduced tags - it is shown as a result. 
+            Result will be shown in <code>JSON</code> format. Result counting proceed from <b>left to right</b>.
+            <br/>There is an addition option: You can introduce the starting point from <b>what game</b> you want to show the result.
+            </remarks>
+            <param name="maxResult">Introduce <b>Maximum Results</b></param>
+            <param name="from">Introduce <b>Starting Point</b></param>
+            <response code = "200">Successfully games found!</response>
+            <response code = "404">Games are not found! May be <code>Values</code> from fields are not introducesed correctly or <b>no games left to be shown</b></response>.
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.EndpointsController.ShowAllTagsAvialable">
+            <summary>
+            Show all game tags
+            </summary>
+            <remarks>
+            Get and show all game tags from a DataBase. 
+            Result will be shown in <code>JSON</code> format.
+            </remarks>
+            <response code = "200">Successfully tags found!</response>
+            <response code = "404">Tags are not found! May be there are <b>no tags</b> in the DataBase</response>.
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.EndpointsController.CountAllGames">
+            <summary>
+            Show number of games in the DataBase.
+            </summary>
+            <remarks>
+            Show number of games in the DataBase. 
+            Result will be shown in <code>JSON</code> format.
+            </remarks>
+            <response code = "200">Number count successfully!</response>
+            <response code = "404">Games are not found! May be there are <b>games</b> in the DataBase</response>.
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.GameCRUDController.GetGameByID(System.Int32)">
+            <summary>
+            Get a game by specified ID from a DataBase
+            </summary>
+            <remarks>
+            Simple request that produce some information
+            Shows a game object by specified <code>id</code> 
+            </remarks>
+            <param name="id">Introduce the ID of a game you are looking for</param>
+            <response code = "200">Game is found!</response>
+            <response code = "404">Game is not found! Check the intorduced id!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.GameCRUDController.GetAllGames">
+            <summary>
+            Get all games from a DataBase
+            </summary>
+            <remarks>
+            Simple request that produce some information.
+            Shows all game objects in format <code>JSON</code> 
+            </remarks>
+            <response code = "200">Successfully retrieved data!</response>
+            <response code = "404">Games are not found! May be <code>DataBase is empty!</code></response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.GameCRUDController.PostAGame(Backend.API._2.Entities.Game)">
+            <summary>
+            Create a game and post it into the DataBase
+            </summary>
+            <remarks>
+            Simple request that creates an object of a game and put it into DataBase. 
+            Introduce data of an object by the <code>example</code> bellow. 
+            <example>
+            <br/><b>Post Example:</b>
+            
+                {
+                    "id": 5,                                                Introduce Id
+                    "image": "C/:images/imgexample.jpg",                    Introduce img path
+                    "title": "The Game Title",                              Introduce game title
+                    "description": "Introduce some description here",
+                    "publisher": 5,                                         Select a publisher
+                    "score": 5,                                             Introduce some Score (max 5)
+                    "genre": "Introduce a maximum apropiate genre",
+                    "type": 2,                                              Select a type
+                    "tagsText": "Introduce tags, separeted by <c>,</c>",
+                    "tags": null                                            DO not toch this!
+                }
+            
+            </example>
+            </remarks>
+            <param name="game">Create game object</param>
+            <response code = "200">Game is created and posted!</response>
+            <response code = "404">Error! Check the intorduced info if it's correctly!</response>
+            <response code = "401">You are not Valid to use this!</response>
+            <response code = "500">Introduced data is not valid or u missed to identify type/publisher!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.GameCRUDController.UpdateAGame(Backend.API._2.Entities.Game)">
+            <summary>
+            Update a game info in the DataBase
+            </summary>
+            <remarks>
+            A request that finds an object of a game by it's <code>ID</code> and change it's <code>data</code> in the DataBase. 
+            Introduce data of an object by the <code>example</code> bellow. 
+            <example>
+            <br/><b>Update Example:</b>
+            
+                {
+                    "id": 5,                                                Introduce Id
+                    "image": "C/:images/imgexample.jpg",                    Introduce img path
+                    "title": "The Game Title",                              Introduce game title
+                    "description": "Introduce some description here",
+                    "publisher": 5,                                         Select a publisher
+                    "score": 5,                                             Introduce some Score (max 5)
+                    "genre": "Introduce a maximum apropiate genre",
+                    "type": 2,                                              Select a type
+                    "tagsText": "Introduce tags, separeted by <c>,</c>",
+                    "tags": null                                            DO not toch this!
+                }
+            
+            </example>
+            </remarks>
+            <param name="game">Update game object</param>
+            <response code = "200">Game is Updated and Saved!</response>
+            <response code = "404">Game not found! Check if <code>ID</code> is introduced correctly!</response>
+            <response code = "401">You are not Valid to use this!</response>
+            <response code = "500">Introduced data is not valid or u missed to identify type/publisher!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.GameCRUDController.DeleteAGame(System.Int32)">
+            <summary>
+            Delete a game from the DataBase
+            </summary>
+            <remarks>
+            A request that finds and delets an object of a game by it's <code>ID</code> from the DataBase.  
+            </remarks>
+            <param name="id">Introduce <code>Id</code> of an object. </param>
+            <response code = "200">Game is Deleted!</response>
+            <response code = "404">Game not found! Check if <code>ID</code> is introduced correctly!</response>
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.LoginController.Login(Backend.API._2.Entities.UserModel)">
+             <summary>
+             Authantification endpoint
+             </summary>
+             <remarks>
+             Check all existings user information. 
+             If exists a user with identical <b>username</b> and <b>password</b> - create the <code>JWT Token</code>.
+             Introduce data by the example bellow.
+             <br/><b>Login Example:</b>
+             
+                 {
+                     "userLogin": "Introduce Login",
+                     "userPassword": "Introduce Password"
+                 }
+            
+             </remarks>
+             <response code = "200">Successfully token creation!</response>
+             <response code = "404">User are not found! May be <code>Username</code> or <code>Password</code> are wrong! <br/>Token deconstructed!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.PublisherCRUDController.GetPublisherByID(System.Int32)">
+            <summary>
+            Get a publisher by specified ID from a DataBase
+            </summary>
+            <remarks>
+            Simple request that produce some information
+            Shows a publisher object by specified <code>id</code> 
+            </remarks>
+            <param name="id">Introduce the ID of a game you are looking for</param>
+            <response code = "200">Publisher is found!</response>
+            <response code = "404">Publisher is not found! Check the intorduced id!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.PublisherCRUDController.GetAllPublishers">
+            <summary>
+            Get all publishers from a DataBase
+            </summary>
+            <remarks>
+            Simple request that produce some information.
+            Shows all publisher objects in format <code>JSON</code> 
+            </remarks>
+            <response code = "200">Successfully retrieved data!</response>
+            <response code = "404">Publisher are not found! May be <code>DataBase is empty!</code></response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.PublisherCRUDController.PostAPublisher(Backend.API._2.Entities.Publishers)">
+            <summary>
+            Create a publisher and post it into the DataBase
+            </summary>
+            <remarks>
+            Simple request that creates an object of a publisher and put it into DataBase. 
+            Introduce data of an object by the <code>example</code> bellow. 
+            <example>
+            <br/><b>Post Example:</b>
+            
+                    {
+                        "id": 1,                                                Introduce ID
+                        "name": "Konami",                                       Introduce Title
+                        "image": "IMG",                                         Introduce img path
+                        "description": "Game company that develops games",      Introduce some description
+                        "site": "https://www.konami.com/en/",                   Introduce site adress (if exists)
+                        "games": 1                                              Introduce game
+                    }
+            
+            </example>
+            </remarks>
+            <param name="publisher">Create publisher object</param>
+            <response code = "200">Publisher is created and posted!</response>
+            <response code = "404">Error! Check the intorduced info if it's correctly!</response>
+            <response code = "401">You are not Valid to use this!</response>
+            <response code = "500">Introduced data is not valid or u missed to identify games!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.PublisherCRUDController.UpdateAPublisher(Backend.API._2.Entities.Publishers)">
+            <summary>
+            Update a publisher info in the DataBase
+            </summary>
+            <remarks>
+            A request that finds an object of a publisher by it's <code>ID</code> and change it's <code>data</code> in the DataBase. 
+            Introduce data of an object by the <code>example</code> bellow. 
+            <example>
+            <br/><b>Update Example:</b>
+            
+                    {
+                        "id": 1,                                                Introduce ID
+                        "name": "Konami",                                       Introduce Title
+                        "image": "IMG",                                         Introduce img path
+                        "description": "Game company that develops games",      Introduce some description
+                        "site": "https://www.konami.com/en/",                   Introduce site adress (if exists)
+                        "games": 1                                              Introduce game
+                    }
+            
+            </example>
+            </remarks>
+            <param name="publisher">Update publisher object</param>
+            <response code = "200">Publisher is Updated and Saved!</response>
+            <response code = "404">Publisher not found! Check if <code>ID</code> is introduced correctly!</response>
+            <response code = "401">You are not Valid to use this!</response>
+            <response code = "500">Introduced data is not valid or u missed to identify games!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.PublisherCRUDController.DeletePublisher(System.Int32)">
+            <summary>
+            Delete a publisher from the DataBase
+            </summary>
+            <remarks>
+            A request that finds and delets an object of a publisher by it's <code>ID</code> from the DataBase.  
+            </remarks>
+            <param name="id">Introduce <code>Id</code> of an object. </param>
+            <response code = "200">Publisher is Deleted!</response>
+            <response code = "404">Publisher not found! Check if <code>ID</code> is introduced correctly!</response>
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.TypeCRUDController.GetTypeByID(System.Int32)">
+            <summary>
+            Get a type by specified ID from a DataBase
+            </summary>
+            <remarks>
+            Simple request that produce some information
+            Shows a types object by specified <code>id</code> 
+            </remarks>
+            <param name="id">Introduce the ID of a type you are looking for</param>
+            <response code = "200">Type is found!</response>
+            <response code = "404">Type is not found! Check the intorduced id!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.TypeCRUDController.GetAllTypes">
+            <summary>
+            Get all types from a DataBase
+            </summary>
+            <remarks>
+            Simple request that produce some information.
+            Shows all types objects in format <code>JSON</code> 
+            </remarks>
+            <response code = "200">Successfully retrieved data!</response>
+            <response code = "404">Types are not found! May be <code>DataBase is empty!</code></response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.TypeCRUDController.PostAType(Backend.API._2.Entities.Types)">
+            <summary>
+            Create a type and post it into the DataBase
+            </summary>
+            <remarks>
+            Simple request that creates an object of a type and put it into DataBase. 
+            Introduce data of an object by the <code>example</code> bellow. 
+            <example>
+            <br/><b>Post Example:</b>
+            
+                {
+                    "id": 1,                Introduce id
+                    "type": "PC"            Introduce type name
+                }
+            
+            </example>
+            </remarks>
+            <param name="type">Create type object</param>
+            <response code = "200">Type is created and posted!</response>
+            <response code = "404">Error! Check the intorduced info if it's correctly!</response>
+            <response code = "401">You are not Valid to use this!</response>
+            <response code = "500">Introduced data is not valid or u missed to identify games!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.TypeCRUDController.UpdateAType(Backend.API._2.Entities.Types)">
+            <summary>
+            Update a type info in the DataBase
+            </summary>
+            <remarks>
+            A request that finds an object of a type by it's <code>ID</code> and change it's <code>data</code> in the DataBase. 
+            Introduce data of an object by the <code>example</code> bellow. 
+            <example>
+            <br/><b>Update Example:</b>
+            
+                {
+                    "id": 1,                Introduce id
+                    "type": "PC"            Introduce type name
+                }
+            
+            </example>
+            </remarks>
+            <param name="type">Update type object</param>
+            <response code = "200">Type is Updated and Saved!</response>
+            <response code = "404">Type not found! Check if <code>ID</code> is introduced correctly!</response>
+            <response code = "401">You are not Valid to use this!</response>
+            <response code = "500">Introduced data is not valid or u missed to identify games!</response>
+        </member>
+        <member name="M:Backend.API._2.Controllers.TypeCRUDController.DeleteType(System.Int32)">
+            <summary>
+            Delete a type from the DataBase
+            </summary>
+            <remarks>
+            A request that finds and delets an object of a type by it's <code>ID</code> from the DataBase.  
+            </remarks>
+            <param name="id">Introduce <code>Id</code> of an object. </param>
+            <response code = "200">Type is Deleted!</response>
+            <response code = "404">Type not found! Check if <code>ID</code> is introduced correctly!</response>
+            <response code = "401">You are not Valid to use this!</response>
+        </member>
+        <member name="T:Backend.API._2.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Backend.API._2.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Backend.API._2.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
